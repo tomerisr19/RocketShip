@@ -8,87 +8,218 @@
     android:orientation="horizontal"
     tools:context=".inGameActivity">
 
+
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="10"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:orientation="horizontal"></LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/textView_Score1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Score:"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                ></TextView>
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
             android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/asteroid_left1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 android:src="@drawable/asteroids"
                 ></ImageView>
+
+            <ImageView
+                android:id="@+id/coin_left1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
+
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="60dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/asteroid_left2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 android:src="@drawable/asteroids"
                 ></ImageView>
+
+            <ImageView
+                android:id="@+id/coin_left2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="60dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/asteroid_left3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 android:src="@drawable/asteroids"
+                ></ImageView>
+
+            <ImageView
+                android:id="@+id/coin_left3"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
                 ></ImageView>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="60dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/asteroid_left4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_left4"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
                 ></ImageView>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="60dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/asteroid_left5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 android:src="@drawable/asteroids"
                 ></ImageView>
+
+            <ImageView
+                android:id="@+id/coin_left5"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/asteroid_left6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_left6"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/asteroid_left7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_left7"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/asteroid_left8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_left8"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
+        </LinearLayout>
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -103,21 +234,28 @@
                 android:visibility="gone"/>
 
             <ImageView
-                android:id="@+id/asteroid_left6"
+                android:id="@+id/asteroid_left9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:visibility="gone"
                 android:src="@drawable/asteroids"
                 ></ImageView>
-
             <ImageView
                 android:id="@+id/main_IMG_leftShip"
                 android:layout_width="wrap_content"
                 android:layout_height="82dp"
                 android:layout_gravity="center"
                 android:src="@drawable/battleship"
-                android:visibility="invisible"
+                android:visibility="gone"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_left9"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
                 ></ImageView>
 
         </LinearLayout>
@@ -136,6 +274,7 @@
                 android:foregroundGravity="center"
                 android:src="@drawable/left_btn"
                 ></ImageView>
+
         </LinearLayout>
     </LinearLayout>
 
@@ -149,6 +288,235 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:orientation="horizontal">
+            <TextView
+                android:id="@+id/textView_Score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                ></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/asteroid_leftToCenter1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_leftToCenter1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/asteroid_leftToCenter2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_leftToCenter2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/asteroid_leftToCenter3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_leftToCenter3"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/asteroid_leftToCenter4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_leftToCenter4"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/asteroid_leftToCenter5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_leftToCenter5"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/asteroid_leftToCenter6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_leftToCenter6"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/asteroid_leftToCenter7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_leftToCenter7"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/asteroid_leftToCenter8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_leftToCenter8"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/leftToCenterExplosion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/boom"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/asteroid_leftToCenter9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/asteroids"
+                ></ImageView>
+
+            <ImageView
+                android:id="@+id/main_IMG_leftToCenterShip"
+                android:layout_width="wrap_content"
+                android:layout_height="82dp"
+                android:layout_gravity="center"
+                android:src="@drawable/battleship"
+                android:visibility="gone"
+                ></ImageView>
+
+            <ImageView
+                android:id="@+id/coin_leftToCenter9"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
 
         </LinearLayout>
 
@@ -156,78 +524,207 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:orientation="vertical">
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="10"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical">
+
             <ImageView
                 android:id="@+id/asteroid_center1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_center1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
                 ></ImageView>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="60dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/asteroid_center2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_center2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
                 ></ImageView>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="60dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/asteroid_center3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_center3"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
                 ></ImageView>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="60dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/asteroid_center4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_center4"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
                 ></ImageView>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="60dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/asteroid_center5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 android:src="@drawable/asteroids"
                 ></ImageView>
+            <ImageView
+                android:id="@+id/coin_center5"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/asteroid_center6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_center6"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/asteroid_center7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_center7"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/asteroid_center8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_center8"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
+        </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:orientation="vertical">
             <ImageView
-                android:id="@+id/asteroid_center6"
+                android:id="@+id/asteroid_center9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -243,6 +740,14 @@
                 android:src="@drawable/battleship"
                 ></ImageView>
             <ImageView
+                android:id="@+id/coin_center9"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
+            <ImageView
                 android:id="@+id/centerExplosion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -252,6 +757,244 @@
 
 
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="10"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/asteroid_rightToCenter1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_rightToCenter1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/asteroid_rightToCenter2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_rightToCenter2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/asteroid_rightToCenter3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_rightToCenter3"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/asteroid_rightToCenter4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_rightToCenter4"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/asteroid_rightToCenter5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_rightToCenter5"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/asteroid_rightToCenter6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_rightToCenter6"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/asteroid_rightToCenter7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_rightToCenter7"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/asteroid_rightToCenter8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_rightToCenter8"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/rightToCenterExplosion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/boom"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/asteroid_rightToCenter9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/asteroids"
+                ></ImageView>
+
+            <ImageView
+                android:id="@+id/main_IMG_rightToCenterShip"
+                android:layout_width="wrap_content"
+                android:layout_height="82dp"
+                android:layout_gravity="center"
+                android:src="@drawable/battleship"
+                android:visibility="gone"
+                ></ImageView>
+
+            <ImageView
+                android:id="@+id/coin_rightToCenter9"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="vertical">
+
+
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -293,71 +1036,178 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="60dp"
             android:orientation="vertical">
+
             <ImageView
                 android:id="@+id/asteroid_right1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_right1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
                 ></ImageView>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="60dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/asteroid_right2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_right2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
                 ></ImageView>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="60dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/asteroid_right3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_right3"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
                 ></ImageView>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="60dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/asteroid_right4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_right4"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
                 ></ImageView>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="60dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/asteroid_right5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_right5"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/asteroid_right6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_right6"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/asteroid_right7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_right7"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/asteroid_right8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/asteroids"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/coin_right8"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
                 ></ImageView>
         </LinearLayout>
 
@@ -374,7 +1224,7 @@
                 android:visibility="gone"/>
 
             <ImageView
-                android:id="@+id/asteroid_right6"
+                android:id="@+id/asteroid_right9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -388,10 +1238,17 @@
                 android:layout_height="82dp"
                 android:layout_gravity="center"
                 android:src="@drawable/battleship"
-                android:visibility="invisible"
+                android:visibility="gone"
                 ></ImageView>
 
-
+            <ImageView
+                android:id="@+id/coin_right9"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/dollar"
+                ></ImageView>
 
         </LinearLayout>
 
@@ -408,6 +1265,7 @@
                 android:layout_gravity="center"
                 android:src="@drawable/right_btn"
                 ></ImageView>
+
         </LinearLayout>
     </LinearLayout>
 
