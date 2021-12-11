@@ -1,7 +1,15 @@
 package com.example.fluppygamenew;
 
-import androidx.appcompat.app.AppCompatActivity;
+import static com.example.fluppygamenew.MainActivity.GAME_MODE;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
@@ -13,8 +21,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+
 import java.util.Timer;
 import java.util.TimerTask;
+
+import com.google.gson.Gson;
 
 public class inGameActivity extends AppCompatActivity {
 
@@ -22,6 +37,7 @@ public class inGameActivity extends AppCompatActivity {
     private final int MAX = 4, MIN = 0;
     private static int DELAY = 700;
     private Timer timer;
+    private MyDB myDB;
     private int clock = 0;
     private int lifeCount = 2;
     private int shipIndex = 2;
@@ -33,6 +49,13 @@ public class inGameActivity extends AppCompatActivity {
     private ImageView[] explosions = new ImageView[5];
     private ImageView[][] coinsMat = new ImageView[9][5];
     private MediaPlayer explosionSound;
+    private SensorManager sensorManager;
+    private Sensor sensor;
+    private String gameMode = "";
+    private SensorEventListener accSensorEventListener;
+    public enum DirectionAction { LEFT,RIGHT }
+    private LocationManager locationManager;
+    private Location location;
     private int score;
 
 
@@ -43,23 +66,58 @@ public class inGameActivity extends AppCompatActivity {
         hideSystemUI();
         initViews();
 
-        rightBtn.setOnClickListener(v -> {
-            if(shipIndex < 4) {
-                ships[shipIndex].setVisibility(View.GONE);
-                shipIndex++;
-                ships[shipIndex].setVisibility(View.VISIBLE);
-                checkHit();
-            }
-        });
+        String fromJSON = MSPv3.getInstance(this).getStringSP("MY_DB", "");
+        myDB = new Gson().fromJson(fromJSON, MyDB.class);
+        if (myDB == null)
+            myDB = new MyDB();
 
-        leftBtn.setOnClickListener(v -> {
-            if(shipIndex > 0) {
-                ships[shipIndex].setVisibility(View.GONE);
-                shipIndex--;
-                ships[shipIndex].setVisibility(View.VISIBLE);
-                checkHit();
+        if (getIntent() != null) {
+            Intent intent = getIntent();
+
+            gameMode = intent.getStringExtra(GAME_MODE);
+            if (gameMode.equals("Sensor")) {
+                initSensor();
+                accSensorEventListener = new SensorEventListener() {
+                    @Override
+                    public void onSensorChanged(SensorEvent event) {
+                        float x = event.values[0];
+                        if (x <= -0.5) {
+                            DirectionAction action = DirectionAction.LEFT;
+                            moveCarBySensors(action);
+                        } else if (x >= 0.5) {
+                            DirectionAction action = DirectionAction.RIGHT;
+                            moveCarBySensors(action);
+                        }
+                    }
+
+                    @Override
+                    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+                    }
+                };
+                leftBtn.setVisibility(View.INVISIBLE);
+                rightBtn.setVisibility(View.INVISIBLE);
+
+            } else {  // Btns mode
+                rightBtn.setOnClickListener(v -> {
+                    if (shipIndex < 4) {
+                        ships[shipIndex].setVisibility(View.GONE);
+                        shipIndex++;
+                        ships[shipIndex].setVisibility(View.VISIBLE);
+                        checkHit();
+                    }
+                });
+
+                leftBtn.setOnClickListener(v -> {
+                    if (shipIndex > 0) {
+                        ships[shipIndex].setVisibility(View.GONE);
+                        shipIndex--;
+                        ships[shipIndex].setVisibility(View.VISIBLE);
+                        checkHit();
+                    }
+                });
             }
-        });
+        }
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
     }
 
@@ -67,6 +125,24 @@ public class inGameActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         startTicker();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(gameMode.equals("Sensors"))
+            sensorManager.unregisterListener(accSensorEventListener);
+    }
+
+    protected void onResume() {
+        super.onResume();
+        if(gameMode.equals("Sensors"))
+            sensorManager.registerListener(accSensorEventListener, sensor, SensorManager.SENSOR_DELAY_NORMAL);
+        hideSystemUI();
+    }
+
+    public boolean isSensorExists(int sensorType) {
+        return (sensorManager.getDefaultSensor(sensorType) != null);
     }
 
     private void startTicker() {
@@ -77,10 +153,75 @@ public class inGameActivity extends AppCompatActivity {
                 Log.d("timeTick", "Tick: " + clock + " On Thread: " + Thread.currentThread().getName());
                 runOnUiThread(() -> {
                     Log.d("timeTick", "Tick: " + clock + " On Thread: " + Thread.currentThread().getName());
+                    if (lifeCount < 0)
+                        finishGame();
+                    else
                     updateAsteroid();
                 });
             }
         }, 0, DELAY);
+    }
+
+    private void finishGame() {
+        timer.cancel();
+        Record record = new Record();
+        LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                        this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 101);
+
+        }
+         location =  locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        if (myDB.getRecords().size() == 0) {
+            record.setScore(score).setLat(location.getLatitude()).setLon(location.getLongitude());
+            myDB.getRecords().add(record);
+        }
+        else if (myDB.getRecords().size() <= 10) {
+            record.setScore(score).setLat(location.getLatitude()).setLon(location.getLongitude());
+            myDB.getRecords().add(record);
+        } else if (myDB.getRecords().get(myDB.getRecords().size() - 1).getScore() < score) {
+            record.setScore(score).setLat(location.getLatitude()).setLon(location.getLongitude());
+            myDB.getRecords().set(myDB.getRecords().size() - 1, record);
+        }
+        myDB.sortRecords();
+
+        Intent intent = new Intent(this, RecordAndMapActivity.class);
+        Bundle bundle = new Bundle();
+        String json = new Gson().toJson(myDB);
+        bundle.putString("myDB", json);
+        intent.putExtra("myDB", bundle);
+        MSPv3.getInstance(this).putStringSP("MY_DB", json);
+        finish();
+        startActivity(intent);
+    }
+
+    private void sortMyDB(MyDB myDB) {
+        Record tempRecord;
+        for(int i = myDB.getRecords().size() - 1; i >= 0; i--)
+            if(i >= 1 && myDB.getRecords().get(i).getScore() > myDB.getRecords().get(i - 1).getScore()) {
+                tempRecord = myDB.getRecords().get(i - 1);
+                myDB.getRecords().set(i - 1, myDB.getRecords().get(i));
+                myDB.getRecords().set(i, tempRecord);
+            }
+    }
+
+    private void moveCarBySensors(DirectionAction action) {
+        if (action == DirectionAction.LEFT) {
+            if (shipIndex < 4) {
+                ships[shipIndex].setVisibility(View.INVISIBLE);
+                shipIndex++;
+                ships[shipIndex].setVisibility(View.VISIBLE);
+                checkHit();
+            }
+        } else if (action == DirectionAction.RIGHT) {
+            if (shipIndex > 0) {
+                ships[shipIndex].setVisibility(View.INVISIBLE);
+                shipIndex--;
+                ships[shipIndex].setVisibility(View.VISIBLE);
+                checkHit();
+            }
+        }
     }
 
 
@@ -192,6 +333,10 @@ public class inGameActivity extends AppCompatActivity {
         }
     }
 
+    private void initSensor() {
+        sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+    }
 
     private void vibrate() {
         Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
@@ -216,6 +361,8 @@ public class inGameActivity extends AppCompatActivity {
     private int randomAsteroids() {
         return (int) (Math.random()*(MAX+1-MIN)) + MIN;
     }
+
+
 
     @Override
     protected void onStop() {

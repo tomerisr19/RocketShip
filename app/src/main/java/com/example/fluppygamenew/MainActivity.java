@@ -6,23 +6,37 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private Button playBtn;
+    private Button sensorBtn;
+    private TextView text, recordsAndMap; // ???
+
+    public static final String GAME_MODE = "GAME_MODE";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         hideSystemUI();
 
+        sensorBtn = findViewById(R.id.sensorBtn);
         playBtn = findViewById(R.id.playBtn);
         playBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, inGameActivity.class);
-                startActivity(i);
-
-
+                Intent intent = new Intent(MainActivity.this, inGameActivity.class);
+                intent.putExtra(GAME_MODE, "Regular");
+                startActivity(intent);
+            }
+        });
+        sensorBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, inGameActivity.class);
+                intent.putExtra(GAME_MODE, "Sensor");
+                startActivity(intent);
             }
         });
     }
