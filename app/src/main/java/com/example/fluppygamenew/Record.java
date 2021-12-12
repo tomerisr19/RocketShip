@@ -45,8 +45,5 @@ public class Record implements Comparable<Record> {
         return (int)(o.getScore() - this.getScore());
     }
 
-//    @Override
-//    public int compareTo(Record o) {
-//        return ((int)o.getScore() - this.getScore());
-//    }
+
 }

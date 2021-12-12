@@ -11,6 +11,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     private Button playBtn;
     private Button sensorBtn;
+    private Button recordsTableBtn;
     private TextView text, recordsAndMap; // ???
 
     public static final String GAME_MODE = "GAME_MODE";
@@ -22,7 +23,9 @@ public class MainActivity extends AppCompatActivity {
         hideSystemUI();
 
         sensorBtn = findViewById(R.id.sensorBtn);
+        recordsTableBtn = findViewById(R.id.recordsTableBtn);
         playBtn = findViewById(R.id.playBtn);
+
         playBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,7 +42,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        recordsTableBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RecordAndMapActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
 
     public void hideSystemUI() {
         if (getSupportActionBar() != null) {
