@@ -26,14 +26,6 @@ public class MainActivity extends AppCompatActivity {
         recordsTableBtn = findViewById(R.id.recordsTableBtn);
         playBtn = findViewById(R.id.playBtn);
 
-        playBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, inGameActivity.class);
-                intent.putExtra(GAME_MODE, "Regular");
-                startActivity(intent);
-            }
-        });
         sensorBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,6 +34,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        playBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, inGameActivity.class);
+                intent.putExtra(GAME_MODE, "Regular");
+                startActivity(intent);
+            }
+        });
+
         recordsTableBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

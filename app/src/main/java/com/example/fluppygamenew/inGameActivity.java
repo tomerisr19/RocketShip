@@ -49,6 +49,7 @@ public class inGameActivity extends AppCompatActivity {
     private ImageView[] explosions = new ImageView[5];
     private ImageView[][] coinsMat = new ImageView[9][5];
     private MediaPlayer explosionSound;
+    private MediaPlayer coinCollectSound;
     private SensorManager sensorManager;
     private Sensor sensor;
     private String gameMode = "";
@@ -329,6 +330,7 @@ public class inGameActivity extends AppCompatActivity {
             score += 100;
             toast("nice1");
             vibrate();
+            coinCollectSound.start();
 
         }
     }
@@ -371,7 +373,7 @@ public class inGameActivity extends AppCompatActivity {
     }
 
     private void toast(String text) {
-        Toast.makeText(this, text, Toast.LENGTH_LONG).show();
+        Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
     }
 
     private void stopTicker() {
@@ -380,6 +382,7 @@ public class inGameActivity extends AppCompatActivity {
 
     private void initViews() {
         explosionSound = MediaPlayer.create(this,R.raw.aaa);
+        coinCollectSound = MediaPlayer.create(this,R.raw.coinsound);
         Log.d(TAG, "anteroidViews: Started");
         ships[0] = findViewById(R.id.main_IMG_leftShip);
         ships[1] = findViewById(R.id.main_IMG_leftToCenterShip);
